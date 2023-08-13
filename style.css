@@ -1,256 +1,131 @@
 * {
+  margin: 0;
+  padding: 0;
   text-decoration: none;
-  margin: 0px;
-  padding: 0px;
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Open Sans", sans-serif;
-}
-
-.wrapper {
-  width: 1100px;
-  margin: auto;
-  position: relative;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 .logo a {
-  font-size: 40px;
-  font-weight: 800px;
-  float: left;
-  font-family: "Courier";
-  color: #a1ccd1;
-}
-
-.menu {
-  float: right;
+  font-size: 24px;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 3px;
 }
 
 nav {
-  width: 100%;
-  margin: auto;
   display: flex;
-  line-height: 60px;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  background: #fff0f5;
-  z-index: 1;
-  border-bottom: 1px solid #a1ccd1;
+  background-color: #e3fdfd;
+  justify-content: space-around;
+  height: 75px;
+  align-items: center;
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav ul li {
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 40%;
 }
 
 nav ul li a {
   color: black;
-  font-weight: bold;
-  text-align: center;
-  padding: 0px 16px 0px 16px;
-  text-decoration: none;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #71c9ce;
 }
 
-section {
-  margin: auto;
-  display: flex;
-  margin-bottom: 50px;
+/* humburgen menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
 }
 
-.kolom {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.kolom .deskripsi {
-  font-size: 20px;
-  font-weight: bold;
-  font-family: comic sans ms;
-  color: #e9b384;
-}
-
-h2 {
-  font-family: comic sans ms;
-  font-size: 45px;
-  font-weight: 800px;
-  margin-bottom: 20px;
-  color: #a1ccd1;
-  width: 100%;
-  line-height: 50px;
-}
-
-a.btnBiru {
-  background: #7c9d96;
-  border-radius: 20px;
-  margin-top: 20px;
-  padding: 6px 15px 6px 15px;
-  color: #fff;
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -10px;
+  top: -5px;
   cursor: pointer;
-  font-weight: bold;
+  z-index: 2;
 }
 
-a.btnBiru:hover {
-  background: #e9b384;
-  text-decoration: none;
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
 }
 
-a.btnPink {
-  background: #e9b384;
-  border-radius: 20px;
-  margin-top: 20px;
-  padding: 15px 20px 15px 20px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
+/* /* hamburger Menu Animation */
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
 }
 
-a.btnPink:hover {
-  background: #7c9d96;
-  text-decoration: none;
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
 }
 
-p {
-  margin: 10px 0px 10px 0px;
-  padding: 10px 0px 10px 0px;
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: black;
+  transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.tengah {
-  text-align: center;
-  width: 100%;
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: black;
+  transform: rotate(-45deg) translate(-1px, 0px);
 }
 
-.tutorList {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
 }
 
-.kartuTutor {
-  width: 20%;
-  margin: 0 auto;
-}
+/* responsive */
 
-.kartuTutor img {
-  width: 80%;
-  border-radius: 50%;
-}
-
-.kartuTutor p {
-  font-family: comic sans ms;
-  font-weight: 800px;
-  font-size: 20px;
-  text-align: center;
-  color: #a1ccd1;
-}
-
-.partnersList {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.kartuPartners {
-  width: 20%;
-  margin: 0 auto;
-}
-
-.kartuPartners img {
-  width: 70%;
-  border-radius: 50%;
-}
-
-#contact {
-  background: #f4f2de;
-  padding: 50px 0px 50px 0px;
-}
-
-.footer {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-}
-
-.footerSection {
-  width: 20%;
-  margin: 0 auto;
-}
-
-h3 {
-  font-family: comic sans ms;
-  font-weight: 800px;
-  font-size: 30px;
-  margin-bottom: 20px;
-  color: #a1ccd1;
-  width: 100%;
-  line-height: 50px;
-}
-
-#copyright {
-  text-align: center;
-  width: 100%;
-  padding: 50px 0px 50px 0px;
-  margin-top: 50px;
-}
-
-@media screen and (max-width: 991.98px) {
-  .wrapper {
-    width: 90%;
-  }
-
-  .logo a {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  nav .menu {
-    width: 100%;
-    margin: 0;
-  }
-
-  nav .menu ul {
-    text-align: center;
-    margin: auto;
-    line-height: 60px;
-  }
-
-  nav .menu ul li {
-    display: inline-block;
-    float: none;
-  }
-
-  section {
-    display: block;
-  }
-
-  section img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .kartuTutor {
+/* TABLET MODE */
+@media screen and (max-width: 834px) {
+  nav ul {
     width: 50%;
   }
+}
 
-  .kartuPartners {
-    width: 50%;
+/* MOBILE MODE */
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e3fdfd;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
